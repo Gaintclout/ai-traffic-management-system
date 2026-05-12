@@ -1,10 +1,10 @@
 from fastapi import FastAPI
-from backend.api.routes import traffic, signals
+from backend.api.routes import traffic, signal
 
 app = FastAPI(title="Smart Traffic System")
 
 app.include_router(traffic.router, prefix="/traffic")
-app.include_router(signals.router, prefix="/signals")
+app.include_router(signal.router, prefix="/signals")
 
 
 @app.get("/")
